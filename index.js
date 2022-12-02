@@ -14,19 +14,18 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   let body_data = req.body;
-  console.log(req.body);
   res.send(body_data);
 });
 
 app.put('/', function (req, res) {
   let body_data = req.body;
-  console.log(req.body);
+  body_data.id = '18pw00';
   res.send(body_data);
 });
 
 app.patch('/', function (req, res) {
   let body_data = req.body;
-  console.log(body_data);
+  body_data.id = '21xw16';
   res.send(body_data);
 });
 
