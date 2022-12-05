@@ -8,8 +8,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
   let query = req.query;
-  console.log(query);
-  res.send(query);
+  if (req.headers.auth != '18pwxx') {
+    res.send({
+      auth: 'Not authenticated to use:  ' + req.headers.auth,
+    });
+  } else {
+    //console.log(query, req.headers.auth);
+    res.send(query);
+  }
 });
 
 app.post('/', function (req, res) {
